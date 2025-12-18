@@ -91,13 +91,13 @@ ssh ysc@192.168.1.103
 ```
 > [!IMPORTANT]
 > Untuk setiap terminal baru harus menjalankan langkah ini selalu
-3. Aktifkan environment `conda` dan melakukan sourcing workspace ROS
-```bash
-srconda
-conda activate robotdog
-cd ~/lite_cog/camera/
-source devel/setup.bash
-```
+> 3. Aktifkan environment `conda` dan melakukan sourcing workspace ROS
+> ```bash
+> srconda
+> conda activate robotdog
+> cd ~/lite_cog/camera/
+> source devel/setup.bash
+> ```
 
 4. Terminal 1 untuk ROS bridge dan video server Jembatan komunikasi antara ROS dan Web Interface.
 ```bash
