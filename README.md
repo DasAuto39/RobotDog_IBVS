@@ -67,6 +67,14 @@ Mekanisme robot dibagi menjadi 4 fase utama sesuai dengan perubahan *State Machi
 
 Berikut adalah gambar Arsitektur sistem dan Sequence Diagram dari Robot Dog
 
+### Arsitektur Sistem
+
 ![Arsitektur Sistem](images/ArsitekturSistem.png)
+
+### Flowchart 
+
 ![Flowchart](images/Flowchart.png)
+
+### Sequence Diagram
+
 ![Sequence Diagram](images/sequencediagram.jpeg)
