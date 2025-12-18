@@ -91,7 +91,7 @@ Berikut adalah gambar Arsitektur sistem dan Sequence Diagram dari Robot Dog.
 > Disarankan menggunakan Linux ataupun jika pada windows gunakan WSL.
 
 1.  Pastikan device terhubung ke Wi-Fi `yz_its`.
-    ![Wi-Fi yz_its](images/yz_its)
+    ![Wi-Fi yz_its](images/yz_its.png)
 
 2.  Buka terminal dan masukkan command untuk SSH:
     ```bash
