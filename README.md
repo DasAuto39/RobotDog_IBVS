@@ -1,4 +1,4 @@
-Pada projek ini dilakukan penerapan Image-Based Visual Servo (IBVS) pada Robot Dog lite-3 dan Tangan OpenManipulator.
+Pada projek ini dilakukan penerapan Image-Based Visual Servo (IBVS) pada Robot Dog lite-3 dan dengan tangan yang menggunakan OpenManipulator.
 
 ## 1. Arsitektur Komunikasi Sistem
 Sistem berjalan terpusat pada **NVIDIA Jetson Xavier NX** yang bertindak sebagai "otak", menghubungkan dua subsistem hardware utama:
@@ -78,3 +78,14 @@ Berikut adalah gambar Arsitektur sistem dan Sequence Diagram dari Robot Dog
 ### Sequence Diagram
 
 ![Sequence Diagram](images/sequencediagram.jpeg)
+
+# Cara untuk menjalankan program
+> (!NOTE)
+> Disarankan menggunakan Linux ataupun jika pada windows gunakan WSL
+
+1. Pastikan device terhubung ke Wi-Fi yz_its
+![Wi-Fi yz_its](images/yz_its)
+2. Lalu buka terminal dan masukkan command
+```bash
+ssh ysc@192.168.1.103
+
