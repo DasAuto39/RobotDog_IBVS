@@ -99,8 +99,8 @@ Berikut adalah gambar Arsitektur sistem dan Sequence Diagram dari Robot Dog.
     ```
 
 3.  **Persiapan Environment (Wajib)**
-    > [!IMPORTANT]
-    > Untuk setiap terminal baru harus menjalankan langkah ini selalu.
+> [!IMPORTANT]
+> Untuk setiap terminal baru harus menjalankan langkah ini selalu.
 
     Aktifkan environment `conda` dan lakukan sourcing workspace ROS:
     ```bash
