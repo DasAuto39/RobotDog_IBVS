@@ -63,3 +63,10 @@ Mekanisme robot dibagi menjadi 4 fase utama sesuai dengan perubahan *State Machi
 | `5` | **ALIGNING** | Robot geser samping untuk meluruskan gripper. | Gripper |
 | `6` | **READY** | Robot duduk, menunggu konfirmasi operator. | Gripper |
 | `7` | **GRASPING** | Logika C++ mengambil alih untuk menjepit objek. | - |
+
+
+Berikut adalah gambar Arsitektur sistem dan Sequence Diagram dari Robot Dog
+
+![Arsitektur Sistem](/images/ArsitekturSistem.png)
+![Flowchart](/images/Flowchart.png)
+![Sequence Diagram](/images/sequencediagram.jpeg)
