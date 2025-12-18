@@ -80,7 +80,7 @@ Berikut adalah gambar Arsitektur sistem dan Sequence Diagram dari Robot Dog
 ![Sequence Diagram](images/sequencediagram.jpeg)
 
 # Cara untuk menjalankan program
-> (!NOTE)
+> [!NOTE]
 > Disarankan menggunakan Linux ataupun jika pada windows gunakan WSL
 
 1. Pastikan device terhubung ke Wi-Fi yz_its
@@ -88,4 +88,79 @@ Berikut adalah gambar Arsitektur sistem dan Sequence Diagram dari Robot Dog
 2. Lalu buka terminal dan masukkan command
 ```bash
 ssh ysc@192.168.1.103
+```
+> [!IMPORTANT]
+> Untuk setiap terminal baru harus menjalankan langkah ini selalu
+3. Aktifkan environment `conda` dan melakukan sourcing workspace ROS
+```bash
+srconda
+conda activate robotdog
+cd ~/lite_cog/camera/
+source devel/setup.bash
+```
+
+4. Terminal 1 untuk ROS bridge dan video server Jembatan komunikasi antara ROS dan Web Interface.
+```bash
+roslaunch my_command_quadruped rosbridge_webvideoserver.launch
+```
+
+5. Terminal 2 untuk Web Interface Hosting yang menjalankan server HTTP untuk frontend.
+```bash
+cd src/my_interface/
+python3 -m http.server 8000
+```
+6. Terminal 3 untuk mengaktifkan service Lidar
+```bash
+cd ~/lite_cog/system/scripts/lidar
+./start_lslidar.sh
+```
+
+7. Terminal 4 untuk mengaktifkan service navigasi
+```bash
+cd ~/lite_cog/system/scripts/nav
+# Pilih salah satu skrip di bawah:
+./start_nav.sh 
+# ATAU
+./start_nav_map_tf.sh
+```
+
+8. Terminal 5 untuk mengaktifkan kamera robot dog
+```bash
+roslaunch my_command_quadruped all_cam_utilities.launch
+```
+
+9. Terminal 6 untuk mengaktifkan kamera OpenManipulator
+```bash
+roslaunch my_graspnet_ros all_cam_utilities.launch
+```
+10. Terminal 7 untuk menjalankan controller untuk OpenManipulator
+```bash
+./src/my_command_arm/bash_scripts/controller_custom.sh
+```
+
+11. Terminal 8 untuk menjalankan program manipulasi
+```bash
+roslaunch my_command_arm my_manipulation.launch
+```
+
+12. Terminal 9 untuk menjalankan navigasi
+```bash
+roslaunch my_command_quadruped my_navigation.launch
+```
+
+
+>[!TIP]
+>Tidak perlu menjalankan sevice itu semua,cukup service yang diperlukan saja
+
+Setelah mengaktifkan service yang diperlukan, program baru bisa dijalankan
+
+program terletak pada folder 
+```bash
+cd ~/Documents/test
+```
+untuk menjalankan program gunakan command\
+```bash
+python3 ibvs_program.py
+```
+
 
