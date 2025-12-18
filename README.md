@@ -90,7 +90,7 @@ Berikut adalah gambar Arsitektur sistem dan Sequence Diagram dari Robot Dog
 ssh ysc@192.168.1.103
 ```
 > [!IMPORTANT]
-> Untuk setiap terminal baru harus menjalankan langkah ini selalu
+> Untuk setiap terminal baru harus menjalankan langkah ini selalu\
 > 3. Aktifkan environment `conda` dan melakukan sourcing workspace ROS
 > ```bash
 > srconda
@@ -150,7 +150,7 @@ roslaunch my_command_quadruped my_navigation.launch
 
 
 >[!TIP]
->Tidak perlu menjalankan sevice itu semua,cukup service yang diperlukan saja
+>Tidak perlu menjalankan semua service,cukup service yang diperlukan saja
 
 Setelah mengaktifkan service yang diperlukan, program baru bisa dijalankan
 
