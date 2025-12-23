@@ -2,6 +2,8 @@
 
 Pada projek ini dilakukan penerapan Image-Based Visual Servo (IBVS) pada Robot Dog lite-3 dan dengan tangan yang menggunakan OpenManipulator.
 
+![Foto Robotdog](images/robotdog.jpeg)
+
 ## 1. Arsitektur Komunikasi Sistem
 
 Sistem berjalan terpusat pada **NVIDIA Jetson Xavier NX** yang bertindak sebagai "otak", menghubungkan dua subsistem hardware utama:
@@ -83,9 +85,19 @@ Berikut adalah gambar Arsitektur sistem dan Sequence Diagram dari Robot Dog.
 ### Sequence Diagram
 ![Sequence Diagram](images/sequencediagram.jpeg)
 
----
 
-## 5. Cara Menjalankan Program
+## 5. Hasil Percobaan
+
+### Percobaan pergerakan robot dengan variasi 4 posisi benda yang berbeda dan setiap posisi dilakukan percobaan 5 kali dengan posisi start robot yang berbeda.
+
+![Grafik Trajektori Robot](images/grafik_trayektori_robot.png)
+
+Berdasarkan grafik trajektori di atas, terlihat bahwa program berhasil menuntun robot menuju titik target yang konvergen, meskipun diinisialisasi dari berbagai posisi awal yang berbeda. Hal ini membuktikan kemampuan robot dalam melakukan navigasi visual yang konsisten.
+
+Sedikit variasi yang terlihat pada titik akhir ($Goal$) disebabkan oleh proses *alignment* gripper. Robot menyesuaikan orientasi akhirnya berdasarkan deteksi visual dari *Gripper Camera* secara real-time, sehingga posisi final robot bersifat dinamis menyesuaikan postur terbaik untuk melakukan grasping.
+
+
+## 6. Cara Menjalankan Program
 
 > [!NOTE]
 > Disarankan menggunakan Linux ataupun jika pada windows gunakan WSL.
@@ -176,3 +188,8 @@ Untuk menjalankan program gunakan
 ```bash
 python3 ibvs_program.py
 ```
+
+## 7. Video Demo
+
+### Video Demo
+[![Video Demo](https://img.youtube.com/vi/ID_VIDEO_YOUTUBE/0.jpg)](https://www.youtube.com/watch?v=ID_VIDEO_YOUTUBE)

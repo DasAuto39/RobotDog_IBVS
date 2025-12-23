@@ -67,6 +67,8 @@ instance/
 
 # Scrapy stuff:
 .scrapy
+dataset/
+#dataset robto
 
 # Sphinx documentation
 docs/_build/
