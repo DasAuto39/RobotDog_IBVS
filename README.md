@@ -9,7 +9,7 @@ Pada projek ini dilakukan penerapan Image-Based Visual Servo (IBVS) pada Robot D
 Sistem berjalan terpusat pada **NVIDIA Jetson Xavier NX** yang bertindak sebagai "otak", menghubungkan dua subsistem hardware utama:
 
 * **Robot Dog (Kaki):** Menerima perintah kecepatan dan mode gerak.
-* **OpenManipulator (Tangan):** Menerima target sudut sendi (joint angles) untuk pergerakan.
+* **OpenManipulator (Tangan):** Menerima target sudut sendi untuk pergerakan.
 
 ### Alur Data Utama:
 
@@ -17,12 +17,12 @@ Sistem berjalan terpusat pada **NVIDIA Jetson Xavier NX** yang bertindak sebagai
 2.  **Processing (Python Node):** Jetson memproses gambar, menghitung error posisi target, dan menentukan aksi selanjutnya.
 3.  **Command Output:**
     * Navigasi Jarak Jauh: Mengirim data ke `move_base`.
-    * Koreksi Posisi (Tracking): Mengirim `cmd_vel` (linear/angular) ke robot dog.
-    * Eksekusi Grasping: Mengirim sinyal trigger boolean ke node C++ (`navman`).
+    * Koreksi Posisi (Tracking): Mengirim `cmd_vel` ke robot dog.
+    * Eksekusi Grasping: Mengirim trigger ke node `navman`.
 
 ---
 
-## 2. Mekanisme Alur Kerja (Berdasarkan Flowchart)
+## 2. Mekanisme Alur Kerja
 
 Mekanisme robot dibagi menjadi 4 fase utama sesuai dengan perubahan *State Machine*:
 
@@ -54,7 +54,7 @@ Mekanisme robot dibagi menjadi 4 fase utama sesuai dengan perubahan *State Machi
 * **Handover ke C++:**
     * Operator melakukan konfirmasi final di Web.
     * Python mengirim sinyal `True` ke topik `/navman_comm`.
-    * **Node C++** mengambil alih kendali penuh untuk menghitung *Inverse Kinematics* (menggerakkan sendi lengan turun) dan menutup gripper.
+    * **Node C++** mengambil alih kendali penuh untuk menghitung *Inverse Kinematics* dan menutup gripper.
 
 ---
 
@@ -103,14 +103,15 @@ Sedikit variasi yang terlihat pada titik akhir ($Goal$) disebabkan oleh proses *
 > Disarankan menggunakan Linux ataupun jika pada windows gunakan WSL.
 
 1.  Pastikan device terhubung ke Wi-Fi `yz_its`.
+   
     ![Wi-Fi yz_its](images/yz_its.png)
 
-2.  Buka terminal dan masukkan command untuk SSH:
+3.  Buka terminal dan masukkan command untuk SSH:
     ```bash
     ssh ysc@192.168.1.103
     ```
 
-3.  **Persiapan Environment (Wajib)**
+4.  **Persiapan Environment (Wajib)**
 > [!IMPORTANT]
 > Untuk setiap terminal baru harus menjalankan langkah ini selalu.
 
