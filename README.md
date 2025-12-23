@@ -193,4 +193,4 @@ python3 ibvs_program.py
 ## 7. Video Demo
 
 ### Video Demo
-[![Video Demo](https://drive.google.com/file/d/1AYfvCy6XUAUZ2HSUqROYmHfM0P3EPGdl/view?usp=sharing)
+[Video Demo (Google Drive)](https://drive.google.com/file/d/1AYfvCy6XUAUZ2HSUqROYmHfM0P3EPGdl/view?usp=sharing)
